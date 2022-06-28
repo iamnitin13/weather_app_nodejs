@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333333;
+  max-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.main-container .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  text-decoration: none;
+  color: blue;
+  font-size: 1.3rem;
+}
+
+.main-container p {
+  font-size: 18px;
+  margin: 20px auto;
+}
+
+h1 {
+  padding-top: 100px;
+  font-size: 4rem;
+}
+header nav h1 {
+  border-bottom: 1px solid #cccaca;
+  margin: 0 20px 50px 0;
+  padding-top: 100px;
+  font-size: 4rem;
+}
+
+.error-page {
+  width: 100%;
+}
+
+.weather-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed gray;
+  width: 40vw;
+  margin: auto;
+  padding: 30px 20px;
+}
+input {
+  border: 1px solid #cccccc;
+  padding: 8px;
+  min-width: 30vw;
+  min-height: 4vh;
+}
+.btn-grp {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+button {
+  cursor: pointer;
+  border: 1px solid #888888;
+  background: #888888;
+  color: #ffffff;
+  padding: 8px;
+  min-width: 8vw;
+  min-height: 4vh;
+  font-size: 1rem;
+}
+.btn-grp button:first-child {
+  margin-right: 20px;
+  background: #ffffff;
+  color: #888888;
+}
+
+.weather-info {
+  width: 44vw;
+  min-height: max-content;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px dotted black;
+}
+.weather-info .city {
+  text-align: center;
+  padding: 8px 0px;
+  background: rgb(16 147 202);
+  color: white;
+}
+.weather-info .info {
+  padding: 0 20px;
+}
+
+footer {
+  border-top: 1px solid #cccaca;
+  color: #888888;
+  padding-top: 20px;
+}
+
+footer p {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.loading-overlay {
+  display: none;
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-overlay .fas {
+  font-size: 3rem;
+  font-weight: 500;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loading-overlay.is-active {
+  display: flex;
+}
