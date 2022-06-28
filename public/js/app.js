@@ -14,24 +14,22 @@ weatherForm.addEventListener("submit", (e) => {
   const location = search.value;
   overlay.classList.toggle("is-active");
 
-  fetch("http://localhost:3000/weather?address=" + location).then(
-    (response) => {
-      overlay.classList.toggle("is-active");
-      response.json().then((res) => {
-        if (res.error) {
-          const p = document.createElement("p");
-          p.innerHTML = `Error: ${res.error}`;
-          p.style.color = "red";
-          weatherInfo.appendChild(p);
-        } else {
-          city.innerHTML = `Weather of <span>${res.city}<span>`;
-          temp.innerHTML = `Temperature: <span>${res.temp} &#x2103</span>`;
-          descrip.innerHTML = `Sky Conditions: <span>${res.description}<span>`;
-          wind.innerHTML = `Wind Speed: <span>${res.wind} km/h<span>`;
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + location).then((response) => {
+    overlay.classList.toggle("is-active");
+    response.json().then((res) => {
+      if (res.error) {
+        const p = document.createElement("p");
+        p.innerHTML = `Error: ${res.error}`;
+        p.style.color = "red";
+        weatherInfo.appendChild(p);
+      } else {
+        city.innerHTML = `Weather of <span>${res.city}<span>`;
+        temp.innerHTML = `Temperature: <span>${res.temp} &#x2103</span>`;
+        descrip.innerHTML = `Sky Conditions: <span>${res.description}<span>`;
+        wind.innerHTML = `Wind Speed: <span>${res.wind} km/h<span>`;
+      }
+    });
+  });
 });
 
 weatherForm.addEventListener("reset", (e) => {
