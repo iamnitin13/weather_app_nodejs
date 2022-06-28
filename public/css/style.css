@@ -44,7 +44,9 @@ header nav h1 {
 }
 
 .error-page {
-  width: 100%;
+  width: 50vw;
+  display: block;
+  margin: auto;
 }
 
 .weather-form {
