@@ -11,6 +11,10 @@ let overlay = document.getElementsByClassName("loading-overlay")[0];
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  if (!search.value) {
+    return;
+  }
+
   const location = search.value;
   overlay.classList.toggle("is-active");
 
